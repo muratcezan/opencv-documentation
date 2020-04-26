@@ -31,12 +31,14 @@ mkdir /opt/opencv && mkdir /opt/opencv/release
 [required] sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
 [required] sudo apt install cmake libtbb2 ffmpeg libgtk2.0-dev libavformat-dev libswscale-dev libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev
 ```
-If you on **/opt/files/opencv/opencv/release** directory and complated all install, you can make **cmake** files. Follow the text..
+If you on **/opt/opencv/release** directory and complated all install, you can make **cmake** files. Follow the text..
 ```
 cd /opt/opencv/release
-cmake -DCMAKE_BUILD_TYPE=RELEASE \
--DWITH_QT=TRUE -DCMAKE_INSTALL_PREFIX=/opt/opencv \
-–DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules /opt/files/opencv/opencv/
+cmake   -DCMAKE_BUILD_TYPE=RELEASE \
+        -DWITH_QT=TRUE \
+        -DCMAKE_INSTALL_PREFIX=/opt/opencv \
+        –DOPENCV_EXTRA_MODULES_PATH=/opt/files/opencv/opencv_contrib \
+        /opt/files/opencv/opencv/
 ```
 You can see output and than complated started install.
 ```
