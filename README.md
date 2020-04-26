@@ -22,7 +22,7 @@ mv opencv_extra /opt/files/opencv/
 Just we create the opencv folder for library and create files for opencv installer files.
 ```
 cd /opt/files/opencv
-mkdir release
+mkdir /opt/opencv && mkdir /opt/opencv/release
 ```
 #### Required Install
 ```
@@ -33,11 +33,14 @@ mkdir release
 ```
 If you on **/opt/files/opencv/opencv/release** directory and complated all install, you can make **cmake** files. Follow the text..
 ```
-cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/opt/opencv –DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules ..
+cd /opt/opencv/release
+cmake -DCMAKE_BUILD_TYPE=RELEASE \
+-DWITH_QT=TRUE -DCMAKE_INSTALL_PREFIX=/opt/opencv \
+–DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules /opt/files/opencv/opencv/
 ```
 You can see output and than complated started install.
 ```
-make -j4
+make -j12
 make install
 ```
 
